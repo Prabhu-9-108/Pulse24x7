@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulse24×7 | Current Affairs, Job Alerts & Data Intelligence</title>
+  <meta name="description" content="Pulse24×7: Stay ahead with real-time daily current affairs, government & private job alerts, exam updates, and data-driven insights. Built-in automation and SEO publishing engine.">
+  <meta name="keywords" content="Pulse24x7, current affairs, daily news, sarkari jobs, private jobs, vacancy 2026, exam preparation, data news">
+  
+  <!-- OpenGraph SEO Tags -->
+  <meta property="og:title" content="Pulse24×7 - Daily Current Affairs & Job Opportunities">
+  <meta property="og:description" content="Verified daily affairs, breaking jobs notifications, and auto-publishing SEO studio.">
+  <meta property="og:type" content="website">
+  
+  <!-- Google Fonts & Tailwind CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef6ff',
+              100: '#d9eaff',
+              500: '#2563eb',
+              600: '#1d4ed8',
+              700: '#1e40af',
+              900: '#0f172a'
+            },
+            accent: {
+              teal: '#0d9488',
+              amber: '#f59e0b',
+              emerald: '#10b981',
+              rose: '#f43f5e'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar and UI Highlights */
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a10;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #64748b;
+    }
+    .badge-glow {
+      box-shadow: 0 0 14px rgba(37, 99, 235, 0.35);
+    }
+    .pulse-dot {
+      animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .4; transform: scale(1.15); }
+    }
+  </style>
+
+  <!-- Dynamic JSON-LD Structured Data Container -->
+  <script type="application/ld+json" id="seo-schema-json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsMediaOrganization",
+    "name": "Pulse24×7 News & Jobs",
+    "url": "https://pulse24x7.internal",
+    "description": "24×7 current affairs, comprehensive employment alerts, and high-frequency data briefs.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://pulse24x7.internal/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col transition-colors duration-200">
+
+  <!-- Breaking Ticker Bar -->
+  <aside class="bg-brand-900 text-white text-xs border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
+      <div class="flex items-center space-x-2 shrink-0">
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-accent-rose text-white">
+          <span class="w-1.5 h-1.5 rounded-full bg-white mr-1 pulse-dot"></span> LIVE 24×7
+        </span>
+        <span class="text-slate-400 hidden sm:inline">|</span>
+      </div>
+      <div class="overflow-hidden relative w-full h-5">
+        <div id="ticker-slider" class="absolute w-full flex items-center space-x-8 transition-transform duration-500 text-slate-300 text-xs font-medium truncate">
+          <span>🎯 UPSC Civil Services Notification 2026 Form Fill Deadline extended</span>
+          <span>⚡ Global Tech Summit signs Green AI bilateral accords</span>
+          <span>💼 SBI Recruitment opens for 8,500+ Specialist Officer positions</span>
+          <span>📊 National Employment Index records +4.2% growth in renewable sectors</span>
+        </div>
+      </div>
+      <div class="shrink-0 flex items-center space-x-3 text-slate-400">
+        <span id="live-time-display" class="font-mono text-[11px] hidden md:inline"></span>
+        <span class="px-2 py-0.5 rounded-full bg-slate-800 text-emerald-400 text-[10px] flex items-center">
+          <i data-lucide="shield-check" class="w-3 h-3 mr-1"></i> Auto-Pipeline: ACTIVE
+        </span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Top Main Navigation -->
+  <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 gap-4">
+        
+        <!-- Brand Logo -->
+        <div class="flex items-center gap-3">
+          <button id="mobile-menu-btn" class="p-2 -ml-2 rounded-lg text-slate-600 dark:text-slate-300 lg:hidden hover:bg-slate-100 dark:hover:bg-slate-800">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+          <a href="#" class="flex items-center gap-2 group">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+              <i data-lucide="zap" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-xl font-extrabold font-display tracking-tight text-slate-900 dark:text-white flex items-center">
+                PULSE<span class="text-brand-600">24×7</span>
+                <span class="ml-1.5 text-[10px] font-semibold tracking-widest text-brand-600 bg-brand-50 dark:bg-brand-950 px-1.5 py-0.5 rounded border border-brand-200 dark:border-brand-800">PRO</span>
+              </span>
+              <p class="text-[10px] text-slate-500 dark:text-slate-400 font-medium -mt-1 hidden sm:block">Current Affairs & Job Automation Portal</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Category Nav Links (Desktop) -->
+        <nav class="hidden lg:flex items-center space-x-1 text-sm font-semibold text-slate-600 dark:text-slate-300">
+          <button onclick="setCategoryFilter('all')" class="cat-nav-btn active px-3 py-2 rounded-lg transition-colors hover:text-brand-600 dark:hover:text-brand-400 text-brand-600 font-bold bg-brand-50 dark:bg-brand-950/60" data-cat="all">All Feeds</button>
+          <button onclick="setCategoryFilter('current-affairs')" class="cat-nav-btn px-3 py-2 rounded-lg transition-colors hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800" data-cat="current-affairs">Current Affairs</button>
+          <button onclick="setCategoryFilter('gov-jobs')" class="cat-nav-btn px-3 py-2 rounded-lg transition-colors hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800" data-cat="gov-jobs">Govt Jobs</button>
+          <button onclick="setCategoryFilter('private-jobs')" class="cat-nav-btn px-3 py-2 rounded-lg transition-colors hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800" data-cat="private-jobs">Tech & Corporate</button>
+          <button onclick="setCategoryFilter('data-news')" class="cat-nav-btn px-3 py-2 rounded-lg transition-colors hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800" data-cat="data-news">Data Briefs</button>
+        </nav>
+
+        <!-- Search Bar, Automation Studio Trigger & Dark Mode -->
+        <div class="flex items-center space-x-2.5">
+          <!-- Quick Search Bar -->
+          <div class="relative hidden md:block w-48 lg:w-60">
+            <input type="text" id="global-search-input" placeholder="Search news, posts, exams..." 
+              class="w-full text-xs rounded-lg pl-8 pr-3 py-2 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:text-slate-200">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-2.5 top-2.5"></i>
+          </div>
+
+          <!-- Studio Automation Launcher Button -->
+          <button onclick="openAutomationModal()" class="flex items-center space-x-1.5 px-3 py-2 rounded-lg bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-700 hover:to-indigo-700 text-white font-medium text-xs shadow-sm hover:shadow transition-all group">
+            <i data-lucide="cpu" class="w-4 h-4 text-indigo-200 group-hover:rotate-45 transition-transform"></i>
+            <span class="hidden sm:inline">Auto-Upload</span> Studio
+            <span class="bg-indigo-900/50 text-[10px] px-1.5 py-0.2 rounded border border-indigo-400/40">AI</span>
+          </button>
+
+          <!-- Bookmarks Counter Button -->
+          <button onclick="openBookmarksModal()" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 relative" title="Saved Articles">
+            <i data-lucide="bookmark" class="w-5 h-5"></i>
+            <span id="saved-count-badge" class="absolute top-1 right-1 w-4 h-4 bg-brand-600 text-white rounded-full text-[9px] flex items-center justify-center font-bold">0</span>
+          </button>
+
+          <!-- Dark Mode Toggle -->
+          <button id="theme-toggle" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800" title="Toggle Theme">
+            <i data-lucide="sun" id="sun-icon" class="w-5 h-5 hidden"></i>
+            <i data-lucide="moon" id="moon-icon" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-3 space-y-2">
+      <input type="text" id="mobile-search-input" placeholder="Search news, posts, exams..." 
+        class="w-full text-sm rounded-lg px-3 py-2 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 mb-2">
+      <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+        <button onclick="setCategoryFilter('all'); toggleMobileMenu();" class="p-2 text-left rounded bg-slate-100 dark:bg-slate-800">All Stories</button>
+        <button onclick="setCategoryFilter('current-affairs'); toggleMobileMenu();" class="p-2 text-left rounded bg-slate-100 dark:bg-slate-800">Current Affairs</button>
+        <button onclick="setCategoryFilter('gov-jobs'); toggleMobileMenu();" class="p-2 text-left rounded bg-slate-100 dark:bg-slate-800">Government Jobs</button>
+        <button onclick="setCategoryFilter('private-jobs'); toggleMobileMenu();" class="p-2 text-left rounded bg-slate-100 dark:bg-slate-800">Private Tech Jobs</button>
+        <button onclick="setCategoryFilter('data-news'); toggleMobileMenu();" class="p-2 text-left rounded bg-slate-100 dark:bg-slate-800">Data Analytics</button>
+        <button onclick="openAutomationModal(); toggleMobileMenu();" class="p-2 text-left rounded bg-brand-50 dark:bg-brand-950 text-brand-600">Auto Studio</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    
+    <!-- Top Stats & Status Strip -->
+    <section class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-6">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-3 sm:p-4 rounded-xl shadow-xs flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-brand-600 dark:text-blue-400 flex items-center justify-center shrink-0">
+          <i data-lucide="newspaper" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">24×7 Articles</span>
+          <p id="stat-total-articles" class="text-lg font-bold text-slate-800 dark:text-white">28</p>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-3 sm:p-4 rounded-xl shadow-xs flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 text-accent-emerald flex items-center justify-center shrink-0">
+          <i data-lucide="briefcase" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">Active Vacancies</span>
+          <p class="text-lg font-bold text-slate-800 dark:text-white">14,290+</p>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-3 sm:p-4 rounded-xl shadow-xs flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-lg bg-amber-100 dark:bg-amber-900/40 text-accent-amber flex items-center justify-center shrink-0">
+          <i data-lucide="flame" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">Auto-Ingested</span>
+          <p id="stat-auto-ingested" class="text-lg font-bold text-slate-800 dark:text-white">12 Today</p>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-3 sm:p-4 rounded-xl shadow-xs flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/40 text-purple-600 flex items-center justify-center shrink-0">
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">SEO Health Score</span>
+          <p class="text-lg font-bold text-slate-800 dark:text-white">99 / 100</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Layout (Left Feed + Right Data Sidebar) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+      <!-- Left Column: Featured Highlight & News Articles List (8 cols) -->
+      <div class="lg:col-span-8 space-y-6">
+
+        <!-- Dynamic Featured Banner -->
+        <article id="hero-banner" class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-brand-900 to-indigo-950 text-white p-6 sm:p-8 shadow-xl">
+          <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          
+          <div class="flex items-center space-x-2 mb-3">
+            <span class="px-2.5 py-1 text-[11px] font-bold tracking-wide uppercase bg-brand-500 text-white rounded-full">Pulse24×7 Top Pick</span>
+            <span class="text-xs text-slate-300">Updated 18 mins ago</span>
+          </div>
+
+          <h1 id="hero-title" class="text-2xl sm:text-3xl font-bold font-display leading-tight mb-3">
+            National Economic Survey 2026: Renewable Sector Posts Record 31% Employment Jump
+          </h1>
+
+          <p id="hero-summary" class="text-sm sm:text-base text-slate-300 mb-5 max-w-2xl line-clamp-2 sm:line-clamp-3">
+            Comprehensive breakdown of sectoral GDP growth, state-level employment numbers, green hydrogen manufacturing schemes, and upcoming public sector recruitment policies for 2026-2027.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <button onclick="readArticleById('featured-01')" class="px-4 py-2.5 rounded-lg bg-white text-slate-900 font-bold text-xs sm:text-sm hover:bg-slate-100 transition-colors flex items-center space-x-2">
+              <i data-lucide="book-open" class="w-4 h-4 text-brand-600"></i>
+              <span>Read Full Analysis</span>
+            </button>
+            <button onclick="copyArticleLink('featured-01')" class="px-3 py-2.5 rounded-lg bg-white/10 hover:bg-white/20 text-white text-xs sm:text-sm font-medium transition-colors flex items-center space-x-1.5 backdrop-blur-sm">
+              <i data-lucide="share-2" class="w-4 h-4"></i>
+              <span>Share</span>
+            </button>
+            <span class="text-xs text-slate-400 ml-auto hidden sm:inline flex items-center">
+              <i data-lucide="clock" class="w-3.5 h-3.5 mr-1"></i> 4 Min Read • Structured Schema Included
+            </span>
+          </div>
+        </article>
+
+        <!-- Dynamic Filter Tabs & Feed Header -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-2 border-b border-slate-200 dark:border-slate-800">
+          <div class="flex items-center space-x-2">
+            <h2 id="current-category-title" class="text-xl font-bold font-display text-slate-900 dark:text-white">
+              Latest Headlines & Verified Notices
+            </h2>
+            <span id="feed-count-badge" class="px-2 py-0.5 rounded text-xs bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold">
+              Showing All
+            </span>
+          </div>
+
+          <!-- Sort and Filter Dropdown -->
+          <div class="flex items-center space-x-2">
+            <select id="sort-selector" onchange="handleSortChange(this.value)" class="text-xs bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-lg px-2.5 py-1.5 font-medium text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-brand-500">
+              <option value="newest">Sort: Latest First</option>
+              <option value="popular">Sort: High Urgency/Popular</option>
+              <option value="jobs-only">Show: Only Vacancies</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dynamic Articles Stream Container -->
+        <div id="articles-container" class="space-y-4">
+          <!-- Populated dynamically via JS -->
+        </div>
+
+        <!-- Pagination or Load More -->
+        <div class="text-center pt-4">
+          <button id="load-more-btn" onclick="simulateLoadMore()" class="px-5 py-2.5 text-xs font-semibold rounded-xl bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 transition-all inline-flex items-center space-x-2 shadow-xs">
+            <i data-lucide="rotate-cw" class="w-4 h-4"></i>
+            <span>Load More Articles</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Deadlines, Quiz & Status (4 cols) -->
+      <div class="lg:col-span-4 space-y-6">
+
+        <!-- Job Deadline Watchlist -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="font-bold text-sm sm:text-base flex items-center text-slate-900 dark:text-white">
+              <i data-lucide="bell" class="w-4 h-4 mr-2 text-accent-amber"></i>
+              Application Deadlines
+            </h3>
+            <span class="text-[10px] uppercase font-bold text-accent-rose bg-rose-50 dark:bg-rose-950/60 px-2 py-0.5 rounded">Urgent</span>
+          </div>
+
+          <div class="space-y-3" id="deadlines-list">
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/60 hover:border-brand-500 transition-colors">
+              <div class="flex justify-between items-start">
+                <span class="text-[11px] font-bold text-brand-600 dark:text-brand-400">UPSC CSE 2026</span>
+                <span class="text-[10px] font-semibold text-rose-500 bg-rose-50 dark:bg-rose-900/30 px-1.5 py-0.5 rounded">2 Days Left</span>
+              </div>
+              <p class="text-xs font-semibold text-slate-800 dark:text-slate-200 mt-1">Civil Services Prelims Exam Notification</p>
+              <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 mt-2">
+                <span>Posts: 1,056</span>
+                <a href="#articles-container" onclick="readArticleById('job-upsc-2026')" class="text-brand-600 dark:text-brand-400 font-medium hover:underline">Apply Details &rarr;</a>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/60 hover:border-brand-500 transition-colors">
+              <div class="flex justify-between items-start">
+                <span class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">ISRO Scientist 'SC'</span>
+                <span class="text-[10px] font-semibold text-amber-500 bg-amber-50 dark:bg-amber-900/30 px-1.5 py-0.5 rounded">5 Days Left</span>
+              </div>
+              <p class="text-xs font-semibold text-slate-800 dark:text-slate-200 mt-1">Electronics & Computer Science Specialists</p>
+              <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 mt-2">
+                <span>Salary: ₹84,000/mo</span>
+                <a href="#articles-container" onclick="readArticleById('job-isro-2026')" class="text-brand-600 dark:text-brand-400 font-medium hover:underline">Apply Details &rarr;</a>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/60 hover:border-brand-500 transition-colors">
+              <div class="flex justify-between items-start">
+                <span class="text-[11px] font-bold text-purple-600 dark:text-purple-400">Google Cloud India</span>
+                <span class="text-[10px] font-semibold text-slate-500 bg-slate-200 dark:bg-slate-700 px-1.5 py-0.5 rounded">Rolling</span>
+              </div>
+              <p class="text-xs font-semibold text-slate-800 dark:text-slate-200 mt-1">Data Solutions Engineer & AI Architects</p>
+              <div class="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 mt-2">
+                <span>Bangalore / Hyderabad</span>
+                <a href="#articles-container" onclick="readArticleById('job-google-2026')" class="text-brand-600 dark:text-brand-400 font-medium hover:underline">View Spec &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daily Current Affairs Micro-Quiz -->
+        <div class="bg-gradient-to-br from-indigo-900 to-slate-900 text-white rounded-2xl p-5 shadow-sm border border-indigo-800/50">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-[10px] font-bold tracking-wider uppercase text-indigo-300">Pulse24×7 Knowledge Drill</span>
+            <span class="text-xs bg-indigo-500/20 px-2 py-0.5 rounded text-indigo-300">Exam Level</span>
+          </div>
+          <h4 class="font-bold text-sm mb-3" id="quiz-question">
+            Which country has officially launched the "Global Clean Energy Grid" accord in the 2026 multilateral summit?
+          </h4>
+          <div class="space-y-2 text-xs" id="quiz-options">
+            <button onclick="checkQuizAnswer(this, false)" class="w-full text-left p-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
+              A) France
+            </button>
+            <button onclick="checkQuizAnswer(this, true)" class="w-full text-left p-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
+              B) India
+            </button>
+            <button onclick="checkQuizAnswer(this, false)" class="w-full text-left p-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
+              C) Germany
+            </button>
+            <button onclick="checkQuizAnswer(this, false)" class="w-full text-left p-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
+              D) Japan
+            </button>
+          </div>
+          <div id="quiz-feedback" class="mt-3 text-xs font-semibold hidden"></div>
+        </div>
+
+        <!-- Real-Time Automated SEO & Webhook Status Widget -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs">
+          <h3 class="font-bold text-sm sm:text-base mb-3 flex items-center text-slate-900 dark:text-white">
+            <i data-lucide="activity" class="w-4 h-4 mr-2 text-brand-600"></i>
+            24×7 Automated Ingestion
+          </h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">
+            Autonomous scraping & RSS syndication running via GitHub Actions.
+          </p>
+
+          <div class="space-y-2.5 text-xs">
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-800">
+              <span class="flex items-center font-medium text-slate-700 dark:text-slate-300">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></span> PIB / Govt Gazettes
+              </span>
+              <span class="text-slate-400 text-[10px]">Auto-Synced 4m ago</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-800">
+              <span class="flex items-center font-medium text-slate-700 dark:text-slate-300">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></span> Tech & Hiring APIs
+              </span>
+              <span class="text-slate-400 text-[10px]">Auto-Synced 9m ago</span>
+            </div>
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-800">
+              <span class="flex items-center font-medium text-slate-700 dark:text-slate-300">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></span> Schema Structured Data
+              </span>
+              <span class="text-emerald-500 font-semibold text-[11px]">Valid JSON-LD</span>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <button onclick="downloadSitemapXml()" class="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center">
+              <i data-lucide="download" class="w-3.5 h-3.5 mr-1"></i> Export Sitemap.xml
+            </button>
+            <button onclick="triggerImmediateAutoSync()" class="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-brand-600 flex items-center">
+              <i data-lucide="refresh-cw" class="w-3.5 h-3.5 mr-1"></i> Sync Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Daily Newsletter / Alert Box -->
+        <div class="bg-slate-100 dark:bg-slate-800/60 rounded-2xl p-5 border border-slate-200 dark:border-slate-700">
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-1">Instant Telegram & Email Dispatch</h4>
+          <p class="text-xs text-slate-600 dark:text-slate-400 mb-3">Get 7:00 AM daily curated current affairs PDF and instant vacancy alerts directly from Pulse24×7.</p>
+          <form onsubmit="handleSubscribe(event)" class="space-y-2">
+            <input type="email" required placeholder="Enter your email address" class="w-full text-xs rounded-lg px-3 py-2 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500">
+            <button type="submit" class="w-full py-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold text-xs rounded-lg transition-colors shadow-xs">
+              Subscribe Free
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Article Reader Modal -->
+  <div id="reader-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl relative my-auto animate-fadeIn">
+      
+      <!-- Modal Header -->
+      <div class="sticky top-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between z-10">
+        <div class="flex items-center space-x-2 text-xs text-slate-500 dark:text-slate-400">
+          <span id="modal-breadcrumb-cat" class="text-brand-600 font-bold uppercase">Current Affairs</span>
+          <span>&bull;</span>
+          <span id="modal-date">Today, 2026</span>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button id="modal-bookmark-btn" onclick="toggleModalBookmark()" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300" title="Bookmark">
+            <i data-lucide="bookmark" class="w-4 h-4"></i>
+          </button>
+          <button onclick="copyModalLink()" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300" title="Copy Link">
+            <i data-lucide="copy" class="w-4 h-4"></i>
+          </button>
+          <button onclick="closeReaderModal()" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 hover:text-slate-800 dark:hover:text-white">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Content Body -->
+      <div class="p-6 sm:p-8 space-y-5">
+        <div class="flex flex-wrap items-center gap-2" id="modal-tags"></div>
+
+        <h1 id="modal-title" class="text-xl sm:text-3xl font-extrabold font-display leading-tight text-slate-900 dark:text-white">
+          Title placeholder
+        </h1>
+
+        <div class="flex items-center space-x-3 text-xs text-slate-500 border-y border-slate-100 dark:border-slate-800/80 py-3">
+          <div class="w-7 h-7 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-[10px]">
+            P24
+          </div>
+          <div>
+            <p class="font-semibold text-slate-800 dark:text-slate-200" id="modal-author">Pulse24×7 Bureau</p>
+            <p class="text-[10px]" id="modal-readtime">3 min read • Fact Checked</p>
+          </div>
+          <div class="ml-auto flex items-center text-emerald-600 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded text-[11px] font-semibold">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5 mr-1"></i> SEO Indexed
+          </div>
+        </div>
+
+        <!-- Article text body -->
+        <div id="modal-body" class="prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed space-y-4"></div>
+
+        <!-- Job Specific Extra Panel -->
+        <div id="modal-job-panel" class="hidden rounded-xl bg-slate-50 dark:bg-slate-800/80 p-4 border border-slate-200 dark:border-slate-700 space-y-3">
+          <h4 class="font-bold text-sm text-slate-900 dark:text-white flex items-center">
+            <i data-lucide="briefcase" class="w-4 h-4 mr-2 text-brand-600"></i> Official Recruitment Meta Information
+          </h4>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+            <div>
+              <span class="text-slate-400 block">Total Vacancies</span>
+              <strong id="job-meta-vacancies" class="text-slate-800 dark:text-white">-</strong>
+            </div>
+            <div>
+              <span class="text-slate-400 block">Eligibility</span>
+              <strong id="job-meta-eligibility" class="text-slate-800 dark:text-white">-</strong>
+            </div>
+            <div>
+              <span class="text-slate-400 block">Pay Scale</span>
+              <strong id="job-meta-salary" class="text-slate-800 dark:text-white">-</strong>
+            </div>
+            <div>
+              <span class="text-slate-400 block">Last Date</span>
+              <strong id="job-meta-deadline" class="text-rose-500 font-bold">-</strong>
+            </div>
+          </div>
+          <div class="pt-2 flex gap-3">
+            <button onclick="showToast('Redirecting to official government/org portal...')" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-lg text-xs font-bold transition-colors">
+              Official Notification PDF
+            </button>
+            <button onclick="showToast('Application link copied to clipboard!')" class="px-4 py-2 bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 rounded-lg text-xs font-medium">
+              Apply Online Link
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick SEO Structured Data Preview Tab in Modal -->
+        <details class="text-xs bg-slate-100 dark:bg-slate-800/50 rounded-lg p-3 text-slate-600 dark:text-slate-400">
+          <summary class="cursor-pointer font-semibold text-slate-700 dark:text-slate-300">
+            View Generated JSON-LD Schema (Google SEO Ready)
+          </summary>
+          <pre id="modal-schema-preview" class="mt-2 p-2 bg-slate-900 text-emerald-400 rounded overflow-x-auto text-[10px] font-mono"></pre>
+        </details>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Saved Bookmarks Modal -->
+  <div id="bookmarks-modal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-lg max-h-[85vh] overflow-y-auto shadow-2xl relative my-auto">
+      <div class="sticky top-0 bg-white dark:bg-slate-900 px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between z-10">
+        <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white flex items-center">
+          <i data-lucide="bookmark" class="w-4 h-4 mr-2 text-brand-600"></i> Saved Pulse24×7 Articles
+        </h3>
+        <button onclick="closeBookmarksModal()" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div id="bookmarks-container" class="p-6 space-y-3"></div>
+    </div>
+  </div>
+
+  <!-- Automation Studio Modal -->
+  <div id="automation-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-4xl max-h-[92vh] overflow-y-auto shadow-2xl relative my-auto">
+      
+      <!-- Studio Header -->
+      <div class="sticky top-0 bg-white dark:bg-slate-900 px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between z-10">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center">
+            <i data-lucide="cpu" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <h2 class="text-base font-bold text-slate-900 dark:text-white font-display">Pulse24×7 Auto-Publishing & SEO Pipeline</h2>
+            <p class="text-xs text-slate-500">Autonomous RSS Syndication, Self-Upload & Instant Schema Injection</p>
+          </div>
+        </div>
+        <button onclick="closeAutomationModal()" class="p-2 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-white">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Studio Body Tabs -->
+      <div class="p-6 space-y-6">
+
+        <!-- Method Tabs -->
+        <div class="flex flex-wrap border-b border-slate-200 dark:border-slate-800 gap-4">
+          <button onclick="switchStudioTab('quick-publish')" id="tab-btn-quick" class="pb-2 text-xs sm:text-sm font-bold border-b-2 border-brand-600 text-brand-600">
+            1. Manual / Self Upload
+          </button>
+          <button onclick="switchStudioTab('ai-generator')" id="tab-btn-ai" class="pb-2 text-xs sm:text-sm font-bold border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200">
+            2. One-Click AI Auto-Generator
+          </button>
+          <button onclick="switchStudioTab('rss-bot')" id="tab-btn-bot" class="pb-2 text-xs sm:text-sm font-bold border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200">
+            3. Scheduled RSS / Webhook Scraper
+          </button>
+          <button onclick="switchStudioTab('github-deploy')" id="tab-btn-github" class="pb-2 text-xs sm:text-sm font-bold border-b-2 border-transparent text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 flex items-center gap-1">
+            <i data-lucide="git-branch" class="w-3.5 h-3.5"></i> 4. GitHub Auto-Deploy Kit
+          </button>
+        </div>
+
+        <!-- TAB 1: Manual / Self Upload Form -->
+        <div id="studio-tab-quick" class="space-y-4">
+          <form onsubmit="handleManualPublish(event)" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="sm:col-span-2">
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Article / Notice Title *</label>
+                <input id="pub-title" type="text" required placeholder="e.g. SSC CGL 2026 Tier-1 Official Results Declared" class="w-full text-xs rounded-lg px-3 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Category *</label>
+                <select id="pub-category" class="w-full text-xs rounded-lg px-3 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                  <option value="current-affairs">Current Affairs</option>
+                  <option value="gov-jobs">Government Job</option>
+                  <option value="private-jobs">Private / Tech Job</option>
+                  <option value="data-news">Data Brief / Report</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- SEO Meta Fields -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Focus Target Keywords (Comma separated for SEO)</label>
+                <input id="pub-keywords" type="text" placeholder="SSC CGL results, cutoff 2026, merit list" class="w-full text-xs rounded-lg px-3 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Meta Description (Max 155 chars)</label>
+                <input id="pub-meta" type="text" placeholder="Check official cutoff marks and Tier-2 examination schedule here..." class="w-full text-xs rounded-lg px-3 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              </div>
+            </div>
+
+            <!-- Job Specific Fields -->
+            <div id="job-fields-section" class="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700 space-y-3">
+              <span class="text-xs font-bold text-brand-600 block">Optional Vacancy Metadata (For Job Posting SEO Schema)</span>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                <input id="pub-vacancies" type="text" placeholder="Vacancies (e.g. 14,000)" class="p-2 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+                <input id="pub-salary" type="text" placeholder="Pay Scale (e.g. Level-7)" class="p-2 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+                <input id="pub-eligibility" type="text" placeholder="Eligibility (e.g. Any Graduate)" class="p-2 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+                <input id="pub-deadline" type="text" placeholder="Deadline (e.g. Nov 15, 2026)" class="p-2 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Article Content / Summary *</label>
+              <textarea id="pub-content" rows="4" required placeholder="Write or paste your article text. Supports bullet points and clean structure..." class="w-full text-xs rounded-lg p-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+            </div>
+
+            <div class="flex items-center justify-between pt-2">
+              <div class="flex items-center space-x-2 text-xs text-slate-500">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i>
+                <span>Auto-generates Google JSON-LD schema upon publish</span>
+              </div>
+              <button type="submit" class="px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs rounded-lg transition-all shadow-md">
+                Publish Live to Pulse24×7
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- TAB 2: AI Auto-Generator -->
+        <div id="studio-tab-ai" class="hidden space-y-4">
+          <div class="bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 p-4 rounded-xl text-xs space-y-2">
+            <h4 class="font-bold text-indigo-900 dark:text-indigo-300 flex items-center">
+              <i data-lucide="sparkles" class="w-4 h-4 mr-1 text-indigo-500"></i>
+              Instant Autonomous News Drafter
+            </h4>
+            <p class="text-slate-600 dark:text-slate-400">
+              Select a trending current event or job title, and our embedded generation algorithm will synthesize a high-SEO, structured article complete with exam points, syllabus, and JSON-LD markup.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Pick a Preset Topic or Type Custom Prompt</label>
+              <select id="ai-preset-select" onchange="applyAiPreset(this.value)" class="w-full text-xs rounded-lg px-3 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <option value="">-- Choose a trending template --</option>
+                <option value="rbi-repo">RBI Monetary Policy 2026: Repo Rate Decisions & Inflation Impact</option>
+                <option value="railway-alp">Railway Recruitment Board (RRB) 2026: 18,000+ Assistant Loco Pilot Jobs</option>
+                <option value="semiconductor-scheme">India Semiconductor Mission 2.0: ₹76,000 Cr Subsidies and Tech Jobs</option>
+                <option value="climate-summit">UN Environmental Assembly 2026: Major Treaties for Competitive Exams</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">Tone & Target Exam Focus</label>
+              <select id="ai-tone-select" class="w-full text-xs rounded-lg px-3 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <option value="exam">Competitive Exams (UPSC / SSC / Banking Points)</option>
+                <option value="jobseeker">Job Seeker Focused (Eligibility, Cutoffs, Salary)</option>
+                <option value="analytical">Executive / Data Analytical Report</option>
+              </select>
+            </div>
+          </div>
+
+          <button onclick="runAiGenerator()" class="w-full py-3 bg-gradient-to-r from-indigo-600 to-brand-600 hover:from-indigo-700 hover:to-brand-700 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center justify-center space-x-2">
+            <i data-lucide="zap" class="w-4 h-4"></i>
+            <span>Synthesize & Auto-Publish Now</span>
+          </button>
+        </div>
+
+        <!-- TAB 3: Scheduled RSS / Webhook Scraper -->
+        <div id="studio-tab-bot" class="hidden space-y-4">
+          <p class="text-xs text-slate-600 dark:text-slate-400">
+            Configure external RSS endpoints or government gazette feeds. The Pulse24×7 automation bot automatically cleans raw HTML, normalizes timestamps, and posts to your feed.
+          </p>
+
+          <div class="space-y-3">
+            <div class="p-3 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+              <div>
+                <p class="text-xs font-bold text-slate-800 dark:text-slate-200">Press Information Bureau (PIB) RSS Feed</p>
+                <span class="text-[11px] text-slate-400 font-mono">https://pib.gov.in/rss/dailyreleases.xml</span>
+              </div>
+              <span class="px-2 py-1 text-[10px] bg-emerald-100 dark:bg-emerald-950 text-emerald-600 font-bold rounded">Connected</span>
+            </div>
+
+            <div class="p-3 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+              <div>
+                <p class="text-xs font-bold text-slate-800 dark:text-slate-200">FreeJobAlert & Employment News Syndicate</p>
+                <span class="text-[11px] text-slate-400 font-mono">https://api.employmentnews.gov.in/v1/feed</span>
+              </div>
+              <span class="px-2 py-1 text-[10px] bg-emerald-100 dark:bg-emerald-950 text-emerald-600 font-bold rounded">Connected</span>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button onclick="triggerImmediateAutoSync()" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 dark:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold text-xs rounded-lg transition-colors flex items-center space-x-2">
+              <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+              <span>Trigger Manual Ingestion Pass Now</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 4: GitHub Auto-Deploy & Actions Kit -->
+        <div id="studio-tab-github" class="hidden space-y-4">
+          <div class="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 p-4 rounded-xl text-xs space-y-2">
+            <h4 class="font-bold text-emerald-900 dark:text-emerald-300 flex items-center">
+              <i data-lucide="check-circle-2" class="w-4 h-4 mr-1.5 text-emerald-500"></i>
+              Pulse24×7 GitHub Pages + Actions Autopilot Ready
+            </h4>
+            <p class="text-slate-600 dark:text-slate-400">
+              Your portal automatically checks for <code class="px-1.5 py-0.5 bg-white dark:bg-slate-900 rounded border border-emerald-200 dark:border-emerald-800 font-mono">feeds.json</code> on startup. Every time your GitHub Action runs, it scrapes PIB, RBI, and Employment News, commits the new <code class="font-mono">feeds.json</code> and <code class="font-mono">sitemap.xml</code> to your <code class="font-mono">pulse24x7</code> repository, and updates your live website automatically.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <button onclick="exportCurrentDatabaseJson()" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-colors group">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-brand-600">1. Export feeds.json</span>
+                <i data-lucide="download" class="w-4 h-4 text-brand-600"></i>
+              </div>
+              <p class="text-[11px] text-slate-500">Download your initial articles database file for your GitHub repo root.</p>
+            </button>
+
+            <button onclick="downloadSitemapXml()" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-colors group">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-brand-600">2. Export sitemap.xml</span>
+                <i data-lucide="compass" class="w-4 h-4 text-emerald-600"></i>
+              </div>
+              <p class="text-[11px] text-slate-500">Download Google Search Console ready XML sitemap for root directory.</p>
+            </button>
+
+            <button onclick="fetchLiveExternalFeedsJson()" class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 hover:bg-brand-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-left transition-colors group">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-brand-600">3. Test Live feeds.json</span>
+                <i data-lucide="radio" class="w-4 h-4 text-purple-600"></i>
+              </div>
+              <p class="text-[11px] text-slate-500">Verify live synchronization with your GitHub repository feed store.</p>
+            </button>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900 text-slate-200 text-xs space-y-2 font-mono">
+            <div class="text-emerald-400 font-bold"># Required Repository File Structure on GitHub (pulse24x7):</div>
+            <div>├── index.html                        <span class="text-slate-400">(Pulse24×7 Web Portal)</span></div>
+            <div>├── feeds.json                        <span class="text-slate-400">(Auto-updated by GitHub Actions)</span></div>
+            <div>├── sitemap.xml                       <span class="text-slate-400">(Auto-updated SEO Sitemap)</span></div>
+            <div>├── auto_scraper.py                   <span class="text-slate-400">(Python RSS & AI Scraper Engine)</span></div>
+            <div>└── .github/workflows/daily_autopilot.yml <span class="text-slate-400">(Cron Runner every 6 hrs)</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Box -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-xl flex items-center space-x-3 text-xs transition-opacity duration-300 opacity-0 pointer-events-none border border-slate-800">
+    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400" id="toast-icon"></i>
+    <span id="toast-message">Notification here</span>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-slate-500 text-xs py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="space-y-2">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded bg-brand-600 flex items-center justify-center text-white font-bold text-xs">P</div>
+          <span class="font-bold text-slate-900 dark:text-white text-sm font-display">PULSE24×7</span>
+        </div>
+        <p class="text-slate-500 dark:text-slate-400 text-[11px]">
+          Engineered for aspirants and professionals. Fully automated 24×7 continuous-intelligence pipeline for daily affairs and employment tracking.
+        </p>
+      </div>
+
+      <div>
+        <h5 class="font-bold text-slate-900 dark:text-white mb-2">Primary Verticals</h5>
+        <ul class="space-y-1">
+          <li><a href="javascript:setCategoryFilter('current-affairs')" class="hover:text-brand-600">Current Affairs 2026</a></li>
+          <li><a href="javascript:setCategoryFilter('gov-jobs')" class="hover:text-brand-600">Sarkari / Central Jobs</a></li>
+          <li><a href="javascript:setCategoryFilter('private-jobs')" class="hover:text-brand-600">Engineering & Tech Careers</a></li>
+          <li><a href="javascript:setCategoryFilter('data-news')" class="hover:text-brand-600">Indices & Economic Reports</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-bold text-slate-900 dark:text-white mb-2">Automated SEO Services</h5>
+        <ul class="space-y-1">
+          <li><a href="javascript:downloadSitemapXml()" class="hover:text-brand-600">Instant Sitemap Generator</a></li>
+          <li><a href="javascript:openAutomationModal()" class="hover:text-brand-600">Webhook Feeder</a></li>
+          <li><a href="javascript:downloadSeoAudit()" class="hover:text-brand-600">Download SEO Schema JSON</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-bold text-slate-900 dark:text-white mb-2">Platform Verification</h5>
+        <p class="text-[11px] text-slate-500 mb-2">All daily current affairs facts are cross-verified with official government gazettes and institutional releases.</p>
+        <span class="inline-flex items-center text-[10px] text-emerald-600 bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 rounded font-mono font-bold">
+          System Status: 100% Operational
+        </span>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 text-center text-slate-400 text-[11px]">
+      &copy; 2026 Pulse24×7 Media Technologies. Autonomous SEO & Publication Engine.
+    </div>
+  </footer>
+
+  <script>
+    /* -------------------------------------------------------------
+     * 1. Data Store: Articles, Jobs, and Current Affairs
+     * ----------------------------------------------------------- */
+    const ARTICLES_DATABASE = [
+      {
+        id: "featured-01",
+        title: "National Economic Survey 2026: Renewable Sector Posts Record 31% Employment Jump",
+        category: "data-news",
+        categoryLabel: "Data Report",
+        date: "October 16, 2026",
+        readTime: "4 min read",
+        author: "Pulse24×7 Research Desk",
+        keywords: ["renewable energy", "employment data 2026", "economic survey", "green jobs"],
+        summary: "Comprehensive breakdown of sectoral GDP growth, state-level employment numbers, green hydrogen manufacturing schemes, and upcoming public sector recruitment policies for 2026-2027.",
+        content: `
+          <p>The Ministry of Finance has officially presented the comprehensive Economic Review highlighting a decisive surge in domestic industrial generation and renewable energy manufacturing.</p>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mt-4">Key Takeaways for Competitive Examinations:</h3>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Renewable Capacity Addition:</strong> Over 28.4 GW added in the last fiscal year alone.</li>
+            <li><strong>Employment Index:</strong> Clean energy installation, solar cell fabrication, and grid battery storage contributed to 312,000 new formal payroll registrations.</li>
+            <li><strong>State Rankings:</strong> Gujarat, Rajasthan, and Tamil Nadu top overall installed power capacity.</li>
+          </ul>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mt-4">Public Recruitment Projections:</h3>
+          <p>State electrical transmission boards and central PSUs (NTPC, NHPC, SECI) have slated combined open notices for over 18,500 engineering and management trainee posts beginning next quarter.</p>
+        `,
+        isFeatured: true
+      },
+      {
+        id: "ca-01",
+        title: "UN Biodiversity Accord: 45 Nations Ratify Global Marine Protection Pact",
+        category: "current-affairs",
+        categoryLabel: "Current Affairs",
+        date: "October 16, 2026",
+        readTime: "3 min read",
+        author: "Pulse24×7 Global Desk",
+        keywords: ["high seas treaty", "marine conservation", "international current affairs", "upsc prelims"],
+        summary: "The High Seas Conservation Treaty officially enters into force with 45 national signatures, creating binding international mechanisms to protect international waters.",
+        content: `
+          <p>In a landmark development for international environmental law, the High Seas Conservation Treaty has achieved full statutory ratification across member nations.</p>
+          <p><strong>Exam Context:</strong> The treaty establishes marine protected areas (MPAs) across areas beyond national jurisdiction (ABNJ), representing nearly two-thirds of the world's oceans.</p>
+          <p>Delegations have established an annual financial mechanism and agreed to mandatory environmental impact assessments (EIAs) before conducting deep-sea mineral sampling.</p>
+        `
+      },
+      {
+        id: "job-upsc-2026",
+        title: "UPSC Civil Services Examination (CSE) 2026: Prelims Notification Released for 1,056 Cadres",
+        category: "gov-jobs",
+        categoryLabel: "Govt Job",
+        date: "October 15, 2026",
+        readTime: "3 min read",
+        author: "Pulse24×7 Career Bureau",
+        keywords: ["UPSC CSE 2026", "IAS vacancy", "civil services eligibility", "prelims exam date"],
+        summary: "Union Public Service Commission has published detailed notification for IAS, IFS, and IPS posts. Applications close within 14 days.",
+        jobMeta: {
+          vacancies: "1,056 Posts",
+          salary: "₹56,100 - ₹2,50,000 (Level 10-17)",
+          eligibility: "Bachelor's Degree in any discipline",
+          deadline: "October 30, 2026"
+        },
+        content: `
+          <p>The Union Public Service Commission (UPSC) has formally issued notification No. 04/2026-CSP for the Civil Services Examination 2026. Aspirants must complete registration via the One-Time Registration (OTR) portal.</p>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mt-3">Crucial Eligibility Norms:</h3>
+          <ul class="list-disc pl-5 space-y-1">
+            <li><strong>Age Criteria:</strong> 21 to 32 years as on August 1, 2026 (Relaxation applicable for reserved categories).</li>
+            <li><strong>Pattern:</strong> Stage 1 (Objective Prelims GS-I & CSAT), Stage 2 (Mains 9 Papers Written), Stage 3 (Personality Interview).</li>
+            <li><strong>Negative Marking:</strong> 1/3rd penalty for incorrect responses in Prelims Paper-I and CSAT.</li>
+          </ul>
+        `
+      },
+      {
+        id: "job-isro-2026",
+        title: "ISRO ICRB Central Recruitment: 340 Scientist/Engineer 'SC' Openings",
+        category: "gov-jobs",
+        categoryLabel: "Govt Job",
+        date: "October 14, 2026",
+        readTime: "2 min read",
+        author: "Pulse24×7 Tech Wing",
+        keywords: ["ISRO scientist jobs", "ICRB vacancy 2026", "B.Tech jobs", "space research jobs"],
+        summary: "Indian Space Research Organisation invites applications for Electronics, Mechanical, and Computer Science graduates for launch facility deployments.",
+        jobMeta: {
+          vacancies: "340 Posts",
+          salary: "₹56,100 + DA + HRA (~₹84,000/mo)",
+          eligibility: "B.E/B.Tech with aggregate 65% or CGPA 6.84",
+          deadline: "November 04, 2026"
+        },
+        content: `
+          <p>Indian Space Research Organisation (ISRO) Centralised Recruitment Board has published recruitment notifications for Scientist/Engineer 'SC' positions across its major centers.</p>
+          <p>Selection will be determined through a computer-based written exam (75% weightage) followed by an in-depth technical interview (25% weightage).</p>
+        `
+      },
+      {
+        id: "job-google-2026",
+        title: "Google & Tech Giants Announce Large-Scale Cloud & AI Architecture Openings in India",
+        category: "private-jobs",
+        categoryLabel: "Tech Careers",
+        date: "October 14, 2026",
+        readTime: "3 min read",
+        author: "Pulse24×7 Career Desk",
+        keywords: ["cloud engineer jobs", "AI architect openings", "Google careers Bangalore", "tech hiring 2026"],
+        summary: "Enterprise cloud teams expand Indian centers in Bangalore, Pune, and Hyderabad with thousands of engineering and data pipeline positions.",
+        jobMeta: {
+          vacancies: "1,200+ Roles",
+          salary: "Competitive Industry Standard (₹24 - 55 LPA)",
+          eligibility: "Computer Science Degree or Equivalent Hands-on Cloud Experience",
+          deadline: "Rolling Hires"
+        },
+        content: `
+          <p>Multinational cloud providers are aggressively scaling enterprise engineering capacity within Indian delivery centers to serve exponential growth in enterprise generative AI operations.</p>
+          <p>Priority specializations include Kubernetes cluster orchestration, distributed LLM deployment pipelines, and high-security compliance architecture.</p>
+        `
+      },
+      {
+        id: "ca-02",
+        title: "Reserve Bank of India Keeps Repo Rate at 6.5%: Emphasizes Inflation Glidepath",
+        category: "current-affairs",
+        categoryLabel: "Current Affairs",
+        date: "October 13, 2026",
+        readTime: "3 min read",
+        author: "Pulse24×7 Monetary Desk",
+        keywords: ["RBI MPC meeting", "repo rate 2026", "banking awareness", "monetary policy"],
+        summary: "The Monetary Policy Committee votes 5-1 to maintain benchmark lending rates while upgrading annual real GDP forecast to 7.1%.",
+        content: `
+          <p>The Reserve Bank of India (RBI) Governor announced the outcomes of the bi-monthly Monetary Policy Committee (MPC) resolution, retaining the headline repo rate at 6.50%.</p>
+          <p><strong>Key Banking Awareness Takeaways:</strong></p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>Standing Deposit Facility (SDF) rate stands adjusted at 6.25%.</li>
+            <li>Marginal Standing Facility (MSF) and Bank Rate remain at 6.75%.</li>
+            <li>Retail CPI inflation projected at 4.5% for the forthcoming financial quarter.</li>
+          </ul>
+        `
+      }
+    ];
+
+    /* -------------------------------------------------------------
+     * 2. App State Management
+     * ----------------------------------------------------------- */
+    let currentCategory = 'all';
+    let currentSearchQuery = '';
+    let currentSort = 'newest';
+    let savedBookmarks = JSON.parse(localStorage.getItem('p24_saved_articles') || '[]');
+    let currentActiveModalArticle = null;
+
+    // Clock Runner
+    function updateClock() {
+      const now = new Date();
+      const el = document.getElementById('live-time-display');
+      if (el) {
+        el.innerText = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) + ' ' + now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      }
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    /* -------------------------------------------------------------
+     * 3. Rendering Articles List & Filtering
+     * ----------------------------------------------------------- */
+    function renderArticles() {
+      const container = document.getElementById('articles-container');
+      if (!container) return;
+
+      let list = ARTICLES_DATABASE.filter(item => {
+        const matchesCategory = (currentCategory === 'all') || (item.category === currentCategory);
+        const textSearch = (item.title + ' ' + item.summary + ' ' + item.keywords.join(' ')).toLowerCase();
+        const matchesQuery = !currentSearchQuery || textSearch.includes(currentSearchQuery.toLowerCase());
+        return matchesCategory && matchesQuery;
+      });
+
+      if (currentSort === 'popular') {
+        list = [...list].reverse();
+      } else if (currentSort === 'jobs-only') {
+        list = list.filter(item => item.category === 'gov-jobs' || item.category === 'private-jobs');
+      }
+
+      const badge = document.getElementById('feed-count-badge');
+      if (badge) badge.innerText = `${list.length} Articles`;
+
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800">
+            <i data-lucide="search-x" class="w-12 h-12 mx-auto text-slate-400 mb-2"></i>
+            <h3 class="font-bold text-slate-700 dark:text-slate-300">No articles found</h3>
+            <p class="text-xs text-slate-500">Try modifying your query or change category filter.</p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      container.innerHTML = list.map(art => {
+        const isJob = (art.category === 'gov-jobs' || art.category === 'private-jobs');
+        const isBookmarked = savedBookmarks.includes(art.id);
+
+        return `
+          <article class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 hover:shadow-md transition-all group">
+            <div class="flex items-center justify-between text-xs mb-2.5">
+              <div class="flex items-center space-x-2">
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold ${
+                  art.category === 'gov-jobs' ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300' :
+                  art.category === 'private-jobs' ? 'bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300' :
+                  art.category === 'data-news' ? 'bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300' :
+                  'bg-brand-100 text-brand-800 dark:bg-brand-950 dark:text-brand-300'
+                }">
+                  ${art.categoryLabel}
+                </span>
+                <span class="text-slate-400">&bull;</span>
+                <span class="text-slate-500 dark:text-slate-400 text-[11px]">${art.date}</span>
+              </div>
+              <div class="flex items-center space-x-1">
+                <button onclick="toggleBookmark('${art.id}')" class="p-1.5 rounded-md text-slate-400 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Save article">
+                  <i data-lucide="bookmark" class="w-4 h-4 ${isBookmarked ? 'fill-brand-600 text-brand-600' : ''}"></i>
+                </button>
+                <button onclick="copyArticleLink('${art.id}')" class="p-1.5 rounded-md text-slate-400 hover:text-brand-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="Copy URL">
+                  <i data-lucide="share-2" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+
+            <h3 onclick="readArticleById('${art.id}')" class="text-base sm:text-lg font-bold text-slate-900 dark:text-white group-hover:text-brand-600 transition-colors cursor-pointer leading-snug mb-2">
+              ${art.title}
+            </h3>
+
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 line-clamp-2 mb-3">
+              ${art.summary}
+            </p>
+
+            ${isJob && art.jobMeta ? `
+              <div class="mb-3 py-2 px-3 bg-slate-50 dark:bg-slate-800/80 rounded-xl border border-slate-100 dark:border-slate-800 flex flex-wrap items-center gap-y-1 gap-x-4 text-[11px]">
+                <span class="text-slate-600 dark:text-slate-300 font-medium"><i data-lucide="users" class="w-3.5 h-3.5 inline mr-1 text-brand-500"></i> ${art.jobMeta.vacancies}</span>
+                <span class="text-slate-600 dark:text-slate-300 font-medium"><i data-lucide="award" class="w-3.5 h-3.5 inline mr-1 text-emerald-500"></i> ${art.jobMeta.salary}</span>
+                <span class="text-rose-600 dark:text-rose-400 font-semibold"><i data-lucide="clock" class="w-3.5 h-3.5 inline mr-1"></i> Ends: ${art.jobMeta.deadline}</span>
+              </div>
+            ` : ''}
+
+            <div class="flex items-center justify-between text-xs pt-2 border-t border-slate-100 dark:border-slate-800/60">
+              <div class="flex flex-wrap gap-1">
+                ${art.keywords.slice(0, 3).map(k => `
+                  <span class="text-[10px] text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded">#${k}</span>
+                `).join('')}
+              </div>
+              <button onclick="readArticleById('${art.id}')" class="text-brand-600 dark:text-brand-400 font-bold hover:underline inline-flex items-center text-xs">
+                Read Full Story <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+              </button>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+      updateArticleStats();
+    }
+
+    /* -------------------------------------------------------------
+     * 4. Modal Reader & Schema JSON-LD Generator
+     * ----------------------------------------------------------- */
+    function readArticleById(articleId) {
+      const art = ARTICLES_DATABASE.find(a => a.id === articleId);
+      if (!art) return;
+
+      currentActiveModalArticle = art;
+
+      document.getElementById('modal-breadcrumb-cat').innerText = art.categoryLabel;
+      document.getElementById('modal-date').innerText = art.date;
+      document.getElementById('modal-title').innerText = art.title;
+      document.getElementById('modal-author').innerText = art.author || 'Pulse24×7 Bureau';
+      document.getElementById('modal-readtime').innerText = `${art.readTime} • Structured Schema Applied`;
+      document.getElementById('modal-body').innerHTML = art.content;
+
+      const tagsEl = document.getElementById('modal-tags');
+      tagsEl.innerHTML = art.keywords.map(k => `
+        <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-brand-50 text-brand-700 dark:bg-brand-950 dark:text-brand-300 border border-brand-200 dark:border-brand-800">
+          #${k}
+        </span>
+      `).join('');
+
+      const jobPanel = document.getElementById('modal-job-panel');
+      if ((art.category === 'gov-jobs' || art.category === 'private-jobs') && art.jobMeta) {
+        jobPanel.classList.remove('hidden');
+        document.getElementById('job-meta-vacancies').innerText = art.jobMeta.vacancies;
+        document.getElementById('job-meta-salary').innerText = art.jobMeta.salary;
+        document.getElementById('job-meta-eligibility').innerText = art.jobMeta.eligibility;
+        document.getElementById('job-meta-deadline').innerText = art.jobMeta.deadline;
+      } else {
+        jobPanel.classList.add('hidden');
+      }
+
+      const schemaObj = generateJsonLdSchema(art);
+      document.getElementById('modal-schema-preview').innerText = JSON.stringify(schemaObj, null, 2);
+
+      updateModalBookmarkIcon();
+
+      const modal = document.getElementById('reader-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeReaderModal() {
+      const modal = document.getElementById('reader-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function generateJsonLdSchema(art) {
+      if (art.category === 'gov-jobs' || art.category === 'private-jobs') {
+        return {
+          "@context": "https://schema.org/",
+          "@type": "JobPosting",
+          "title": art.title,
+          "description": art.summary,
+          "datePosted": "2026-10-16T09:00:00+05:30",
+          "validThrough": art.jobMeta ? "2026-11-30T23:59:59+05:30" : "2026-12-31T23:59:59+05:30",
+          "employmentType": "FULL_TIME",
+          "hiringOrganization": {
+            "@type": "Organization",
+            "name": art.author || "Official Department",
+            "sameAs": "https://pulse24x7.internal"
+          },
+          "jobLocation": {
+            "@type": "Place",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "IN"
+            }
+          },
+          "baseSalary": {
+            "@type": "MonetaryAmount",
+            "currency": "INR",
+            "value": {
+              "@type": "QuantitativeValue",
+              "unitText": "MONTH"
+            }
+          }
+        };
+      }
+
+      return {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": art.title,
+        "image": ["https://pulse24x7.internal/assets/og-cover.jpg"],
+        "datePublished": "2026-10-16T08:00:00+05:30",
+        "dateModified": "2026-10-16T09:30:00+05:30",
+        "author": [{
+          "@type": "Person",
+          "name": art.author || "Pulse24×7 Editorial Desk"
+        }],
+        "publisher": {
+          "@type": "Organization",
+          "name": "Pulse24×7 Media Network",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://pulse24x7.internal/assets/logo.png"
+          }
+        },
+        "description": art.summary,
+        "keywords": art.keywords.join(", ")
+      };
+    }
+
+    /* -------------------------------------------------------------
+     * 5. Automated Self-Upload, AI Generator & Feed Sync
+     * ----------------------------------------------------------- */
+    function openAutomationModal() {
+      const modal = document.getElementById('automation-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeAutomationModal() {
+      const modal = document.getElementById('automation-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function switchStudioTab(tab) {
+      document.getElementById('studio-tab-quick').classList.toggle('hidden', tab !== 'quick-publish');
+      document.getElementById('studio-tab-ai').classList.toggle('hidden', tab !== 'ai-generator');
+      document.getElementById('studio-tab-bot').classList.toggle('hidden', tab !== 'rss-bot');
+      const githubTab = document.getElementById('studio-tab-github');
+      if (githubTab) githubTab.classList.toggle('hidden', tab !== 'github-deploy');
+
+      const btns = [
+        { id: 'tab-btn-quick', active: tab === 'quick-publish' },
+        { id: 'tab-btn-ai', active: tab === 'ai-generator' },
+        { id: 'tab-btn-bot', active: tab === 'rss-bot' },
+        { id: 'tab-btn-github', active: tab === 'github-deploy' }
+      ];
+
+      btns.forEach(b => {
+        const el = document.getElementById(b.id);
+        if (!el) return;
+        if (b.active) {
+          el.className = 'pb-2 text-xs sm:text-sm font-bold border-b-2 border-brand-600 text-brand-600 flex items-center gap-1';
+        } else {
+          el.className = 'pb-2 text-xs sm:text-sm font-bold border-b-2 border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 flex items-center gap-1';
+        }
+      });
+    }
+
+    async function fetchLiveExternalFeedsJson() {
+      try {
+        const response = await fetch('./feeds.json?t=' + Date.now(), { cache: 'no-store' });
+        if (!response.ok) {
+          showToast('Using built-in database (feeds.json will connect once pushed to GitHub).');
+          return;
+        }
+        const externalArticles = await response.json();
+        if (Array.isArray(externalArticles) && externalArticles.length > 0) {
+          const existingIds = new Set(ARTICLES_DATABASE.map(a => a.id));
+          let addedCount = 0;
+          externalArticles.forEach(art => {
+            if (art && art.id && !existingIds.has(art.id)) {
+              ARTICLES_DATABASE.unshift(art);
+              addedCount++;
+            }
+          });
+          if (addedCount > 0) {
+            renderArticles();
+            const ingestedStat = document.getElementById('stat-auto-ingested');
+            if (ingestedStat) ingestedStat.innerText = `${12 + addedCount} Today`;
+            showToast(`Pulse24×7 synced ${addedCount} new automated articles from feeds.json!`);
+          } else {
+            showToast('feeds.json is up to date with your live Pulse24×7 feed.');
+          }
+        }
+      } catch (err) {
+        console.log('Local preview mode: feeds.json will be loaded automatically on GitHub Pages.');
+      }
+    }
+
+    function exportCurrentDatabaseJson() {
+      const blob = new Blob([JSON.stringify(ARTICLES_DATABASE, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'feeds.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('feeds.json exported! Commit this file to your pulse24x7 GitHub repo root.');
+    }
+
+    function handleManualPublish(event) {
+      event.preventDefault();
+
+      const title = document.getElementById('pub-title').value.trim();
+      const category = document.getElementById('pub-category').value;
+      const rawKeywords = document.getElementById('pub-keywords').value.trim();
+      const meta = document.getElementById('pub-meta').value.trim();
+      const content = document.getElementById('pub-content').value.trim();
+
+      const vacancies = document.getElementById('pub-vacancies').value.trim();
+      const salary = document.getElementById('pub-salary').value.trim();
+      const eligibility = document.getElementById('pub-eligibility').value.trim();
+      const deadline = document.getElementById('pub-deadline').value.trim();
+
+      const keywords = rawKeywords ? rawKeywords.split(',').map(s => s.trim()) : ['news', 'alerts', '2026'];
+
+      const newArticle = {
+        id: 'auto-' + Date.now(),
+        title: title,
+        category: category,
+        categoryLabel: category === 'gov-jobs' ? 'Govt Job' : (category === 'private-jobs' ? 'Tech Job' : (category === 'data-news' ? 'Data Report' : 'Current Affairs')),
+        date: "October 16, 2026",
+        readTime: "3 min read",
+        author: "Pulse24×7 Editor Pipeline",
+        keywords: keywords,
+        summary: meta || content.substring(0, 140) + '...',
+        content: `<p>${content.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>')}</p>`,
+        jobMeta: vacancies || deadline ? {
+          vacancies: vacancies || 'Multiple Posts',
+          salary: salary || 'As per official rules',
+          eligibility: eligibility || 'Check official gazette',
+          deadline: deadline || 'Open'
+        } : null
+      };
+
+      ARTICLES_DATABASE.unshift(newArticle);
+      closeAutomationModal();
+      renderArticles();
+      showToast('Article published & Structured Schema generated on Pulse24×7!');
+      event.target.reset();
+    }
+
+    function applyAiPreset(presetKey) {}
+
+    function runAiGenerator() {
+      const preset = document.getElementById('ai-preset-select').value;
+      showToast('Pulse24×7 AI Engine: Extracting key facts and generating SEO headers...');
+
+      setTimeout(() => {
+        let generatedArticle;
+
+        if (preset === 'railway-alp') {
+          generatedArticle = {
+            id: 'ai-rrb-' + Date.now(),
+            title: "Railway Recruitment Board (RRB) 2026: 18,799 Assistant Loco Pilot Vacancies Detailed",
+            category: "gov-jobs",
+            categoryLabel: "Govt Job",
+            date: "October 16, 2026",
+            readTime: "4 min read",
+            author: "Pulse24×7 AI Bot",
+            keywords: ["RRB ALP 2026", "railway technician vacancy", "CBT-1 syllabus", "railway jobs"],
+            summary: "Ministry of Railways issues notification for 18,799 ALP posts. Detailed eligibility, medical standards (A-1 category), and CBT-1 examination matrix.",
+            jobMeta: {
+              vacancies: "18,799 Posts",
+              salary: "Level-2 (7th CPC) ₹19,900 Initial Pay",
+              eligibility: "Matriculation + ITI / Diploma in Engineering",
+              deadline: "November 25, 2026"
+            },
+            content: `
+              <p>The Railway Recruitment Boards (RRBs) have initiated nationwide registration for Assistant Loco Pilot (ALP) across 21 regional zones.</p>
+              <h3 class="font-bold text-slate-900 dark:text-white mt-3">Syllabus Matrix for CBT 1:</h3>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Mathematics (20 Questions - Number System, Algebra, Trigonometry)</li>
+                <li>Mental Ability / Reasoning (25 Questions - Coding, Syllogism)</li>
+                <li>General Science (20 Questions - Physics, Chemistry, Life Sciences)</li>
+                <li>General Awareness on Current Affairs (10 Questions)</li>
+              </ul>
+            `
+          };
+        } else {
+          generatedArticle = {
+            id: 'ai-auto-' + Date.now(),
+            title: "Reserve Bank of India Issues Digital Rupee (e₹) Interoperability Mandate for Unified Payments",
+            category: "current-affairs",
+            categoryLabel: "Current Affairs",
+            date: "October 16, 2026",
+            readTime: "3 min read",
+            author: "Pulse24×7 Automated Desk",
+            keywords: ["Digital Rupee", "RBI CBDC", "UPI interoperability", "Banking awareness 2026"],
+            summary: "Central bank directives require all licensed scheduled commercial banks to enable native QR integration between UPI merchant networks and retail CBDC wallets.",
+            content: `
+              <p>The Reserve Bank of India has expanded the operational architecture for the Central Bank Digital Currency (CBDC - Retail) by directing complete cross-network routing with existing UPI retail handles.</p>
+              <h3 class="font-bold text-slate-900 dark:text-white mt-3">High Yield Points for Banking & UPSC Prelims:</h3>
+              <ul class="list-disc pl-5 space-y-1">
+                <li><strong>Statutory Framework:</strong> Section 22 of the RBI Act, 1934 as amended by the Finance Act.</li>
+                <li><strong>Legal Tender:</strong> Digital Rupee carries sovereign liability on the central bank balance sheet.</li>
+                <li><strong>Offline Protocols:</strong> Near Field Communication (NFC) protocol trials underway in remote hilly districts.</li>
+              </ul>
+            `
+          };
+        }
+
+        ARTICLES_DATABASE.unshift(generatedArticle);
+        closeAutomationModal();
+        renderArticles();
+        showToast('Autonomous article generated and published with SEO schema tags!');
+      }, 900);
+    }
+
+    function triggerImmediateAutoSync() {
+      showToast('Connecting to PIB, Gazette, and Tech APIs...');
+      setTimeout(() => {
+        const dummyScraped = {
+          id: 'scraped-' + Date.now(),
+          title: "Defense Research & Development Organisation (DRDO) Tests Next-Gen Hypersonic Glide Vehicle",
+          category: "current-affairs",
+          categoryLabel: "Current Affairs",
+          date: "October 16, 2026",
+          readTime: "2 min read",
+          author: "Govt Gazette RSS Feed",
+          keywords: ["DRDO test", "hypersonic technology", "defense current affairs", "APJ Abdul Kalam Island"],
+          summary: "Successful telemetry tracking achieved from Dr. APJ Abdul Kalam Island off the coast of Odisha, validating aerodynamic scramjet stability.",
+          content: `
+            <p>DRDO has achieved a critical technology demonstration with the test flight of its long-range Hypersonic Glide Vehicle (HGV).</p>
+            <p>The flight was monitored by various radar stations, electro-optical tracking systems, and telemetry stations along the eastern seaboard.</p>
+          `
+        };
+
+        ARTICLES_DATABASE.unshift(dummyScraped);
+        renderArticles();
+        showToast('Pulse24×7 Auto-Sync Complete: 1 new official gazette article added!');
+      }, 800);
+    }
+
+    /* -------------------------------------------------------------
+     * 6. Filtering, Bookmarking & Search Handling
+     * ----------------------------------------------------------- */
+    function setCategoryFilter(category) {
+      currentCategory = category;
+
+      document.querySelectorAll('.cat-nav-btn').forEach(btn => {
+        if (btn.getAttribute('data-cat') === category) {
+          btn.className = 'cat-nav-btn active px-3 py-2 rounded-lg text-brand-600 font-bold bg-brand-50 dark:bg-brand-950/60';
+        } else {
+          btn.className = 'cat-nav-btn px-3 py-2 rounded-lg hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 font-semibold text-slate-600 dark:text-slate-300';
+        }
+      });
+
+      const catTitleEl = document.getElementById('current-category-title');
+      if (category === 'all') catTitleEl.innerText = "Latest Headlines & Verified Notices";
+      if (category === 'current-affairs') catTitleEl.innerText = "24×7 Current Affairs & Analysis";
+      if (category === 'gov-jobs') catTitleEl.innerText = "Sarkari & Government Vacancies";
+      if (category === 'private-jobs') catTitleEl.innerText = "Technology & Corporate Job Alerts";
+      if (category === 'data-news') catTitleEl.innerText = "Data Intelligence & Economic Reports";
+
+      renderArticles();
+    }
+
+    function handleSortChange(sortVal) {
+      currentSort = sortVal;
+      renderArticles();
+    }
+
+    function toggleBookmark(id) {
+      if (savedBookmarks.includes(id)) {
+        savedBookmarks = savedBookmarks.filter(item => item !== id);
+        showToast('Article removed from saved collection');
+      } else {
+        savedBookmarks.push(id);
+        showToast('Article saved to your Pulse24×7 collection');
+      }
+      localStorage.setItem('p24_saved_articles', JSON.stringify(savedBookmarks));
+      updateBookmarkBadge();
+      renderArticles();
+      if (currentActiveModalArticle && currentActiveModalArticle.id === id) {
+        updateModalBookmarkIcon();
+      }
+    }
+
+    function toggleModalBookmark() {
+      if (currentActiveModalArticle) {
+        toggleBookmark(currentActiveModalArticle.id);
+      }
+    }
+
+    function updateModalBookmarkIcon() {
+      if (!currentActiveModalArticle) return;
+      const btn = document.getElementById('modal-bookmark-btn');
+      const isSaved = savedBookmarks.includes(currentActiveModalArticle.id);
+      btn.innerHTML = `<i data-lucide="bookmark" class="w-4 h-4 ${isSaved ? 'fill-brand-600 text-brand-600' : ''}"></i>`;
+      lucide.createIcons();
+    }
+
+    function updateBookmarkBadge() {
+      const badge = document.getElementById('saved-count-badge');
+      if (badge) badge.innerText = savedBookmarks.length;
+    }
+
+    function openBookmarksModal() {
+      const container = document.getElementById('bookmarks-container');
+      const savedItems = ARTICLES_DATABASE.filter(a => savedBookmarks.includes(a.id));
+
+      if (savedItems.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-8 text-slate-400">
+            <i data-lucide="bookmark" class="w-8 h-8 mx-auto mb-2 opacity-40"></i>
+            <p class="text-xs">No saved articles yet. Bookmark items to view them here.</p>
+          </div>
+        `;
+      } else {
+        container.innerHTML = savedItems.map(item => `
+          <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-between">
+            <div class="space-y-1 pr-3">
+              <span class="text-[10px] uppercase font-bold text-brand-600">${item.categoryLabel}</span>
+              <h4 onclick="closeBookmarksModal(); readArticleById('${item.id}');" class="text-xs font-bold text-slate-800 dark:text-slate-100 hover:underline cursor-pointer line-clamp-1">
+                ${item.title}
+              </h4>
+            </div>
+            <button onclick="toggleBookmark('${item.id}'); openBookmarksModal();" class="text-rose-500 p-1 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded">
+              <i data-lucide="trash-2" class="w-4 h-4"></i>
+            </button>
+          </div>
+        `).join('');
+      }
+
+      document.getElementById('bookmarks-modal').classList.remove('hidden');
+      document.getElementById('bookmarks-modal').classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeBookmarksModal() {
+      const modal = document.getElementById('bookmarks-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    /* -------------------------------------------------------------
+     * 7. SEO Utilities, Quiz and Share Tools
+     * ----------------------------------------------------------- */
+    function checkQuizAnswer(btn, isCorrect) {
+      const options = document.querySelectorAll('#quiz-options button');
+      options.forEach(opt => opt.disabled = true);
+
+      const feedback = document.getElementById('quiz-feedback');
+      feedback.classList.remove('hidden');
+
+      if (isCorrect) {
+        btn.classList.add('bg-emerald-600', 'text-white');
+        feedback.innerText = "✓ Correct! India launched the proposal alongside International Solar Alliance allies.";
+        feedback.className = "mt-3 text-xs font-semibold text-emerald-400";
+      } else {
+        btn.classList.add('bg-rose-600', 'text-white');
+        feedback.innerText = "✗ Incorrect. The correct answer is (B) India.";
+        feedback.className = "mt-3 text-xs font-semibold text-rose-400";
+      }
+    }
+
+    function copyArticleLink(id) {
+      const tempUrl = `${window.location.origin}${window.location.pathname}?article=${id}`;
+      const input = document.createElement('textarea');
+      input.value = tempUrl;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+      showToast('Pulse24×7 article share link copied to clipboard!');
+    }
+
+    function copyModalLink() {
+      if (currentActiveModalArticle) {
+        copyArticleLink(currentActiveModalArticle.id);
+      }
+    }
+
+    function downloadSitemapXml() {
+      const baseUrl = window.location.origin + window.location.pathname.replace(/\/index\.html$/, '');
+      let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+      xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+      
+      ARTICLES_DATABASE.forEach(art => {
+        xml += `  <url>\n`;
+        xml += `    <loc>${baseUrl}/?article=${art.id}</loc>\n`;
+        xml += `    <lastmod>2026-10-16</lastmod>\n`;
+        xml += `    <changefreq>daily</changefreq>\n`;
+        xml += `    <priority>${art.category === 'gov-jobs' ? '0.9' : '0.8'}</priority>\n`;
+        xml += `  </url>\n`;
+      });
+      xml += `</urlset>`;
+
+      const blob = new Blob([xml], { type: 'application/xml' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'sitemap.xml';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('sitemap.xml successfully generated and downloaded!');
+    }
+
+    function downloadSeoAudit() {
+      const allSchemas = ARTICLES_DATABASE.map(a => generateJsonLdSchema(a));
+      const blob = new Blob([JSON.stringify(allSchemas, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'pulse24x7-seo-schema.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Google News & Jobs JSON-LD schema file exported!');
+    }
+
+    function handleSubscribe(e) {
+      e.preventDefault();
+      showToast('Subscribed! Pulse24×7 7 AM Current Affairs capsule confirmed.');
+      e.target.reset();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const msgEl = document.getElementById('toast-message');
+      msgEl.innerText = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 3500);
+    }
+
+    function updateArticleStats() {
+      const countEl = document.getElementById('stat-total-articles');
+      if (countEl) countEl.innerText = ARTICLES_DATABASE.length;
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    function simulateLoadMore() {
+      showToast('Loading past archive articles...');
+      setTimeout(() => {
+        showToast('All current historical archive records are synchronized.');
+      }, 600);
+    }
+
+    /* -------------------------------------------------------------
+     * 8. Theme Toggle, Search Listeners & Initialization
+     * ----------------------------------------------------------- */
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('global-search-input');
+      const mobileSearchInput = document.getElementById('mobile-search-input');
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentSearchQuery = e.target.value.trim();
+          renderArticles();
+        });
+      }
+      if (mobileSearchInput) {
+        mobileSearchInput.addEventListener('input', (e) => {
+          currentSearchQuery = e.target.value.trim();
+          renderArticles();
+        });
+      }
+
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      if (menuBtn) {
+        menuBtn.addEventListener('click', toggleMobileMenu);
+      }
+
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const sunIcon = document.getElementById('sun-icon');
+      const moonIcon = document.getElementById('moon-icon');
+
+      function initTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark');
+          sunIcon.classList.remove('hidden');
+          moonIcon.classList.add('hidden');
+        } else {
+          document.documentElement.classList.remove('dark');
+          sunIcon.classList.add('hidden');
+          moonIcon.classList.remove('hidden');
+        }
+      }
+
+      themeToggleBtn.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        if (isDark) {
+          document.documentElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+          sunIcon.classList.add('hidden');
+          moonIcon.classList.remove('hidden');
+        } else {
+          document.documentElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+          sunIcon.classList.remove('hidden');
+          moonIcon.classList.add('hidden');
+        }
+      });
+
+      initTheme();
+      updateBookmarkBadge();
+      renderArticles();
+      fetchLiveExternalFeedsJson();
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
